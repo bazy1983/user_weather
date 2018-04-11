@@ -2,7 +2,9 @@ var fs = require("fs");
 var inquirer = require("inquirer");
 var request = require("request");
 var weather = require('weather-js');
-var user! = require("./user.js")
+var UserSearch = require("./user.js");
+var WeatherAdmin = require("./admin.js")
+
 
 
 var city;
@@ -40,15 +42,10 @@ function searcher() {
       message: "Enter your city to search."
     }
   ]).then(function (answer) {
-    city = answer.city;
-    var search = {
-      search: city,
-      degreeType: 'F'
-    }
-    weather.find(search, function (err, result) {
-      if (err) console.log(err);
-      console.log(JSON.stringify(result, null, 2));
-    });
+
+    var wAdmin = new WeatherAdmin();
+    wAdmin.newUserSearch(answer.name, answer.city);
+      
   });
 
 }

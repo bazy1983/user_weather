@@ -1,4 +1,4 @@
-module.exports =  function() {
+module.exports =  function(name, location) {
         this.name = name;
         this.location = location;
         this.date = Date.now();
