@@ -2,21 +2,11 @@ var fs = require("fs");
 var inquirer = require("inquirer");
 var request = require("request");
 var weather = require('weather-js');
+var user! = require("./user.js")
+
 
 var city;
-var tempArr = ["Rohan", "Housotn", "4/10/18"];
 
-
-fs.appendFile('./log.txt', tempArr + "\n", function (err) {
-  if (err) throw err;
-  console.log('Saved!');
-});
-
-
-fs.readFile('./log.txt', "utf-8", function (err, data) {
-  if (err) throw err;
-  console.log(data);
-});
 
 inquirer.prompt([
   {
@@ -36,10 +26,6 @@ inquirer.prompt([
   }
 });
 
-
-function dbstuff() {
-  // var user1 = new 
-}
 
 function searcher() {
   inquirer.prompt([
