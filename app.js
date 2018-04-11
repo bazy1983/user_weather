@@ -1,20 +1,20 @@
 var fs = require("fs");
 
 
-var tempArr= ["Rohan", "Housotn", "4/10/18"];
+var tempArr = ["Rohan", "Housotn", "4/10/18"];
 
 
-fs.appendFile('./log.txt', tempArr+"\n", function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
+fs.appendFile('./log.txt', tempArr + "\n", function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
 
 
-  fs.readFile('./log.txt', "utf-8", function(err, data){
-    if (err) throw err;
-    console.log(data);
-  });
-  
+fs.readFile('./log.txt', "utf-8", function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+
 var inquirer = require("inquirer");
 var request = require("request");
 var weather = require('weather-js');
@@ -39,7 +39,9 @@ inquirer.prompt([
 });
 
 
-
+function dbstuff() {
+  var user
+}
 
 function searcher() {
   inquirer.prompt([
@@ -64,11 +66,5 @@ function searcher() {
       console.log(JSON.stringify(result, null, 2));
     });
   });
-<<<<<<< HEAD
-
-
 
 }
-=======
-}
->>>>>>> 0565f2f2d0f245aaf46340141331a3f395e06c40
