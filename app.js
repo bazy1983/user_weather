@@ -1,6 +1,9 @@
 var fs = require("fs");
+var inquirer = require("inquirer");
+var request = require("request");
+var weather = require('weather-js');
 
-
+var city;
 var tempArr = ["Rohan", "Housotn", "4/10/18"];
 
 
@@ -15,11 +18,6 @@ fs.readFile('./log.txt', "utf-8", function (err, data) {
   console.log(data);
 });
 
-var inquirer = require("inquirer");
-var request = require("request");
-var weather = require('weather-js');
-
-var city;
 inquirer.prompt([
   {
     name: "user",
@@ -40,7 +38,7 @@ inquirer.prompt([
 
 
 function dbstuff() {
-  var user
+  // var user1 = new 
 }
 
 function searcher() {

@@ -1,10 +1,18 @@
+module.exports = function (){
+    this.name = name;
+    this.isAdmin = false;
+    this.checkAdmin = function (user){
+        if (user = "Admin"){
+            this.isAdmin = true;
+        }
+    }
+}
 function UserSearch(){
     this.name = name;
     this.location= location;
     this.date = Date.now();
     this.weatherSearch = function(){
         
-
             var search = {
               search: 'San Francisco, CA',
               degreeType: 'F'
