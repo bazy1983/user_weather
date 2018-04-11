@@ -16,3 +16,15 @@ function UserSearch(){
             }
             
 }
+
+
+
+function AdminSearch(){
+    this.newUserSearch = function(){
+
+    }
+
+    this.getData = function(){
+
+    }
+}
