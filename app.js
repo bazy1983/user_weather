@@ -2,37 +2,52 @@ var inquirer = require("inquirer");
 var request = require("request");
 var weather = require('weather-js');
 
+var city;
 inquirer.prompt([
   {
     name: "user",
-    type: "input",
+    type: "list",
     message: "Enter your name!",
-  },
-  {
-    name: "name",
-    type: "input",
-    message: "Enter your gender!"
-  },
-  {
-    name: "city",
-    type: "input",
-    message: "Enter your strength!"
+    choices: [
+      "admin",
+      "user"
+    ]
   }
 ]).then(function (answer) {
-console.log(answer);
+  if (answer.user === "user") {
+    searcher();
+  } else {
+    // readfile
+  }
 });
 
 
 
 
 function searcher() {
-
-var search = {
-  search: 'San Francisco, CA',
-  degreeType: 'F'
-}
-  weather.find(search, function (err, result) {
-    if (err) console.log(err);
-    console.log(JSON.stringify(result, null, 2));
+  inquirer.prompt([
+    {
+      name: "name",
+      type: "input",
+      message: "Enter your UserName"
+    },
+    {
+      name: "city",
+      type: "input",
+      message: "Enter your city to search."
+    }
+  ]).then(function (answer) {
+    city = answer.city;
+    var search = {
+      search: city,
+      degreeType: 'F'
+    }
+    weather.find(search, function (err, result) {
+      if (err) console.log(err);
+      console.log(JSON.stringify(result, null, 2));
+    });
   });
+
+
+
 }
